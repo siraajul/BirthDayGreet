@@ -15,10 +15,7 @@ class MainActivity : AppCompatActivity() {
         val name = findViewById<EditText>(R.id.inputText)
 
         Birthdaybutton.setOnClickListener {
-            name.editableText.toString()
 
-            Toast.makeText(this@MainActivity, "name is ${name.text}",Toast.LENGTH_LONG).show()
-        }
 
     }
 }
