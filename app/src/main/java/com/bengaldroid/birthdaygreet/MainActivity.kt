@@ -1,21 +1,22 @@
 package com.bengaldroid.birthdaygreet
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val Birthdaybutton = findViewById<Button>(R.id.createBirthdayButton)
-        val name = findViewById<EditText>(R.id.inputText)
+        val nameInput = findViewById<EditText>(R.id.inputText)
 
-        Birthdaybutton.setOnClickListener {
+        val name = nameInput.editableText.toString()
 
-
+        val intent = Intent(this, GreetingActivity::class.java)
+        intent.putExtra(GreetingActivity.NAME_EXTRA, name)
+        startActivity(intent)
     }
 }
